@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+ @layer utilities {
+  .border-long-dash {
+    border-style: dashed;
+    border-width: 3px;
+    border-color: #FFD700;
+    border-image: linear-gradient(to right, #FFD700 20%, transparent 20%) 1;
+  }
+}
+
+/* global.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}   
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+html {
+   scroll-behavio: smooth;
+}
+ 
+@keyframes marquee-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-35%);
+  }
+}
+
+.animate-marquee-right {
+  animation: marquee-right 13s linear infinite;
+}
+
+.active {
+  color: blue;
+  font-weight: 800;
+  background-color: rgb(108, 83, 250) ;
+}
+
+ 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
