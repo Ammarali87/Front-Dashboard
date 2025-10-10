@@ -6,7 +6,8 @@ import Navbar from "./../components/Navbar/Navbar"
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
- 
+import Sidebar from '../components/Sidebar/Sidebar';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -24,9 +25,22 @@ export default function RootLayout({
       <body className={inter.className}>
           <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <Navbar/>
+           <Navbar/>
+           <div className="flex">
+            <div className="p-5 hidden md:block">
+            <Sidebar/>
+            </div>
+            
+            <div className="w-full md:max-w-[1140px] p-5">
               {children}
-      <Footer/>
+            </div>
+
+            <div className="">
+            </div>
+
+           </div>
+
+              <Footer/>
            </ThemeProvider>
           </AppRouterCacheProvider>
         </body>
