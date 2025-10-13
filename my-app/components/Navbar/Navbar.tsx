@@ -155,7 +155,7 @@ export default function Navbar() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveId(entry.target.id);
-          }
+          }  
         });
       },
       { threshold: 0.6 }
@@ -173,7 +173,7 @@ export default function Navbar() {
     setAnchorEl(event.currentTarget);
     setOpen(true);
   };
-
+            //  currentTArte vs Event.Target.value
   const handleMenuClose = () => {
     setAnchorEl(null);
     setOpen(false);
@@ -228,7 +228,7 @@ export default function Navbar() {
               onClick={handleMenuClick}
               sx={{ color: 'white' }}
             >
-              <Avatar
+              <Avatar 
                 src="/amar.png"
                 sx={{
                   width: 32,

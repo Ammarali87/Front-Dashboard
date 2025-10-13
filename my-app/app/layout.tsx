@@ -26,17 +26,13 @@ export default function RootLayout({
           <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
            <Navbar/>
+
            <div className="flex">
             <div className="p-5 hidden md:block">
             <Sidebar/>
             </div>
             
-            <div className="w-full md:max-w-[1140px] p-5">
-              {children}
-            </div>
-
-            <div className="">
-            </div>
+            <div className="w-full md:max-w-[1140px] p-5">{children}</div>
 
            </div>
 
