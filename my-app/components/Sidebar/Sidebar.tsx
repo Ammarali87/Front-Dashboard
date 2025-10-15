@@ -14,7 +14,7 @@ import {
   InputAdornment,
 } from '@mui/material';
 import KeyboardShortcutIcon from '@mui/icons-material/Keyboard';
-import { LayoutDashboard, Newspaper, Folders, CreditCard, Settings, User } from 'lucide-react';
+import { LucideIcon,LayoutDashboard, Newspaper, Folders, CreditCard, Settings, User } from 'lucide-react';
 import Link from 'next/link';
 
 // npm install --save-dev @types/next
@@ -23,10 +23,10 @@ interface CommandItemType {
   id: string;
   group: string;
   label: string;
-  icon: React.ComponentType<any>;
+  icon: LucideIcon;
   href?: string;
   shortcut?: string;
-}
+}   
 
 const CMD_ITEMS: CommandItemType[] = [
   { id: 'dashboard', group: 'Suggestions', label: 'Dashboard', icon: LayoutDashboard, href: '/' },
@@ -38,9 +38,10 @@ const CMD_ITEMS: CommandItemType[] = [
 ];
 
 const Sidebar: FC = () => {
-  const [query, setQuery] = useState('');
-  const filtered = CMD_ITEMS.filter(i => i.label.toLowerCase().includes(query.toLowerCase()));
+  const [query, setQuery] = useState(''); 
+  const filtered = CMD_ITEMS.filter(i => i.label.toLowerCase().includes(query.trim().toLowerCase()));
   const groups: string[] = Array.from(new Set(filtered.map((i: CommandItemType) => i.group)));
+  
 
   const renderItem = ({ id, icon: Icon, label, href, shortcut }: CommandItemType) => (
     <ListItem key={id} disablePadding>
@@ -57,6 +58,7 @@ const Sidebar: FC = () => {
   return (
     <Box sx={{ width: 300, height: '100vh', borderRight: 1, borderColor: 'divider', display: 'flex', flexDirection: 'column' }}>
       <Box sx={{ p: 2 }}>
+         search
         <TextField
           fullWidth size='small'
           placeholder='Type a command or search...'
@@ -82,6 +84,6 @@ const Sidebar: FC = () => {
       </Box>
     </Box>
   );
-};
+};   
 
 export default Sidebar;

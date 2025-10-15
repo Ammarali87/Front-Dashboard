@@ -1,29 +1,28 @@
 'use client';
-import About from "@/components/About/About"
-import Contact from "@/components/Contact/Contact"
+import DashboardCard from "@/components/Dashboard/DashboardCard";
+import { User ,Newspaper ,Bell} from 'lucide-react';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-100 p-8">
+    <main className="flex divide-amber-500 dark:text-slate-200 min-h-screen flex-col items-center justify-center bg-gray-100 p-8">
       <div className="flex  z-50 flex-col relative mb-8  md:flex-row items-center h-screen justify-center mt-3 md:mt-[-22px]">
-        <section className="w-full mt-[-61px] max-w-4xl text-center mb-12">
-          <h1 className="text-5xl w-[30vw] max-md:mt-20 mx-auto  mb-11">
-          
-          </h1>
-          
-        </section>
+          <div className="flex flex-wrap gap-5">
 
-        <section className="w-1/2 max-w-4xl mt-[-61px] p-8 mb-8 rounded-lg shadow-lg">
-
-        </section>
+        <DashboardCard  title="Dashboard " count={0} icon={<span>📊</span>} />
+        <DashboardCard
+          title="Users"
+          count={120}
+          icon={<User size={50} color="gray" />}
+          />   
+              <DashboardCard
+        title="Notifications"
+        count={15}
+        icon={<Bell size={50} color="red" />}
+        />
+      <Newspaper size={72}  text-slate-500 />
+       
+        </div>
       </div>
-        <section className="w-full max-w-6xl text-center bg-[#2D3748] p-8 rounded-lg shadow-lg mb-8">
-        </section>
-
-        <section className="w-full flex-col md:flex-row  bg-[#2D3748] p-8 rounded-lg shadow-lg mb-8">
-      
-        </section>
-
 
     </main>
   );
