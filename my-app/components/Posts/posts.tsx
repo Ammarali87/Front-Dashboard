@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import posts from '@/data/Posts';
-import { Post,PostsTableProps } from '@/types/Posts';
+import posts from '@/data/posts';
+import { Post,PostsTableProps } from '@/types/posts';
 
 import {
   Table,
@@ -31,9 +31,9 @@ const PostsTable = ({ limit, title }: PostsTableProps) => {
   return (
     <TableContainer component={Paper} sx={{ mt: 4 }}>
       <Typography
-        variant="h5"
-        component="h3"
-        sx={{ mb: 2, fontWeight: 600, p: 2 }}
+        variant="h3"
+        component="h2"
+        sx={{ mb: 2, fontWeight: 400, p: 2 }}
       >
         {title ? title : 'Posts'}
       </Typography>
@@ -41,10 +41,10 @@ const PostsTable = ({ limit, title }: PostsTableProps) => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell sx={{ fontWeight: 600 }}>Title</TableCell>
-            <TableCell sx={{ fontWeight: 600 }}>Author</TableCell>
-            <TableCell sx={{ fontWeight: 600, textAlign: 'right' }}>Date</TableCell>
-            <TableCell sx={{ fontWeight: 600 }}>Action</TableCell>
+            <TableCell sx={{ fontWeight: 400 }}>Title</TableCell>
+            <TableCell sx={{ fontWeight: 400 }}>Author</TableCell>
+            <TableCell sx={{ fontWeight: 400, textAlign: 'right' }}>Date</TableCell>
+            <TableCell sx={{ fontWeight: 400 }}>Action</TableCell>
           </TableRow>
         </TableHead>
 
