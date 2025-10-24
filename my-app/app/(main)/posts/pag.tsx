@@ -1,5 +1,5 @@
 import PostsTable from '@/components/Posts/Posts';
-import LeftArrowBtn from '@/components/ArrowLeftCircle/leftArrowBtn';
+import LeftArrowBtn from '@/components/ArrowLeftBtn/LeftArrowBtn';
 import PostsPagination from '@/components/PostsPagination/PostsPagination';
 
 const PostsPage = () => {

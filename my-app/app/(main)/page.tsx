@@ -2,7 +2,7 @@
 
 import DashboardCard from "@/components/Dashboard/DashboardCard";
 import PostsTable from "@/components/Posts/Posts";
-import LeftArrowBtn from "@/components/ArrowLeftCircle/leftArrowBtn";
+import LeftArrowBtn from "@/components/ArrowLeftBtn/LeftArrowBtn";
 import { User, Newspaper, Bell } from 'lucide-react';
 // https://www.dating.com/en/people/#referrer=https%3A%2F%2Fwww.dating.com%2F&registration=false&token=46ff74d719fd57b838699d2f0a751965&authorizationmethod=signin%3Atoken
 

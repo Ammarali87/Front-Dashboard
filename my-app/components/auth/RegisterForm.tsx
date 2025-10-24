@@ -16,6 +16,7 @@ import {
   Button,
   Box,
 } from '@mui/material';
+import { $ZodEncodeError } from 'zod/v4/core';
 
 const formSchema = z
   .object({
@@ -54,7 +55,7 @@ const RegisterForm: React.FC = () => {
   const onSubmit = (data: FormData) => {
     console.log('Register data:', data);
     router.push('/');
-  };
+  };   
 
   return (
     <Card sx={{ maxWidth: 400, mx: 'auto' }}>
@@ -64,21 +65,22 @@ const RegisterForm: React.FC = () => {
       />
       <CardContent>
         <Box component="form" onSubmit={handleSubmit(onSubmit)} noValidate>
-          {/* Name */}
+          {/* Name */}      
           <Controller
             name="name"
             control={control}
-            render={({ field }) => (
-              <TextField
+            render={({ field }) => (   //  lunch  field with all filed inside object
+            // ,,destructuring field from render props
+              <TextField    
                 {...field}
                 label="Name"
                 fullWidth
                 margin="normal"
                 variant="outlined"
-                error={!!errors.name}
+                error={!!errors.name} //  expect true or false  then the helper  
                 helperText={errors.name?.message}
-              />
-            )}
+              />   
+            )}  
           />
 
           {/* Email */}
@@ -107,7 +109,7 @@ const RegisterForm: React.FC = () => {
               <TextField
                 {...field}
                 label="Password"
-                type="password"
+                type="password"  
                 fullWidth
                 margin="normal"
                 variant="outlined"

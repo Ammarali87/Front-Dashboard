@@ -1,3 +1,51 @@
+# inform   login regester 
+ when fetch data  use manual fetch data  no Ai
+ after fetch  consloe.log((post )) 
+    handleSubmit(data:z.infer<>){  log(data)}
+    func sometime just log data not action in the beggining
+ onSubmit={handleSubmit(onSubmit)} noValidate
+ error={!!error.name}  !! converts any truthy/falsy value into a boolean (true or false).
+error={errors?.name}    this pass object but MUI want true or false 
+
+onBlur,      // mark as touched
+When you do {...field}, it spreads all these props into your TextField, so it automatically:
+
+Displays the correct value
+
+Updates the form when typing
+
+Handles blur/touch logic
+
+noValidate disables the browser’s default HTML5 validation popups (like “Please fill out this field”).
+You want to use React Hook Form’s custom validation instead.
+    
+<form onSubmit={onSubmit}>   normal REACT   then 
+you’d have to manually call event.preventDefault() and handle validation logic yourself
+  but react-hook-form  
+<Box component="form" onSubmit={handleSubmit(onSubmit)}>
+ add   type="password"     to passwond 
+
+ const {  c,h,f:{ers}} = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+
+
+     Toaster not Wrapper in Layout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

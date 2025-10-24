@@ -3,7 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm, Controller } from 'react-hook-form';
-import { z } from 'zod';
+import { email, z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import {
@@ -29,8 +29,8 @@ type FormData = z.infer<typeof formSchema>;
 
 const LoginForm: React.FC = () => {
   const router = useRouter();
-
-  const {
+  
+  const {    
     control,
     handleSubmit,
     formState: { errors },
@@ -39,7 +39,7 @@ const LoginForm: React.FC = () => {
     defaultValues: {
       email: '',
       password: '',
-    },
+    },  
   });
 
   const onSubmit = (data: FormData) => {

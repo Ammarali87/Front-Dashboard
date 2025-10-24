@@ -7,7 +7,7 @@ import Link from 'next/link';
     text?:string;
     link?:string;
   } 
-const leftArrowBtn: React.FC<LeftBtnType> = ({ text, link }) => {
+const LeftArrowBtn: React.FC<LeftBtnType> = ({ text, link }) => {
   return (
     //  render text and link in div not in icon like siz 
     <div>
@@ -18,4 +18,4 @@ const leftArrowBtn: React.FC<LeftBtnType> = ({ text, link }) => {
   )
 }
 
-export default leftArrowBtn
+export default LeftArrowBtn
