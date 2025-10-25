@@ -4,7 +4,7 @@ export interface Post {
   body: string;
   author: string;
   date: string;
-  comments: PostComment[];
+  comments?: PostComment[];
 }
 
 export interface PostComment {

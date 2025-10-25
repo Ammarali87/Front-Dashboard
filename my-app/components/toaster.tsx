@@ -1,40 +1,3 @@
-// 'use client'
-
-// import React from 'react'
-// import { Snackbar, Alert } from '@mui/material'
-
-// interface ToastData {
-//   id: number
-//   message: string
-//   severity?: 'success' | 'info' | 'warning' | 'error'
-// }
-
-// interface ToastProps {
-//   toast: ToastData
-//   onClose: (id: number) => void
-// }
-
-// export const Toast = ({ toast, onClose }: ToastProps) => (
-//   <Snackbar
-//     key={toast.id}
-//     open
-//     autoHideDuration={4000}
-//     onClose={() => onClose(toast.id)}
-//     anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-//   >
-//     <Alert
-//       onClose={() => onClose(toast.id)}
-//       severity={toast.severity}
-//       variant="filled"
-//       sx={{ width: '100%' }}
-//     >
-//       {toast.message}
-//     </Alert>
-//   </Snackbar>
-// )
-
-
-
 "use client";
 
 import React from "react";
@@ -54,11 +17,12 @@ export default function Toaster({
   removeToast: (id: string) => void;
 }) {
   return (
-    <div className="fixed right-4 top-4 z-50 flex flex-col gap-2">
+    <div className="fixed mt-8 right-4 top-12 z-50 flex flex-col gap-2">
       {toasts.map((t) => (
         <div
           key={t.id}
-          className="max-w-sm w-full bg-white dark:bg-gray-800 border rounded shadow p-3 flex items-start gap-3"
+          className="max-w-sm w-full  bg-yellow-400 dark:bg-gray-800 border rounded 
+          shadow p-3 flex items-start  gap-3"
           role="status"
         >
           <div className="flex-1">

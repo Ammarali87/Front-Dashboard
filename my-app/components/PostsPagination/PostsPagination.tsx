@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const PostsPagination: React.FC = () => {
+const PostsPagination: React.FC = ({mypage,totalPages ,onPageChange}:any) => {
   const [page, setPage] = React.useState(1);
 
   const handleChange = (_: React.ChangeEvent<unknown>, value: number) => {

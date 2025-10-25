@@ -1,30 +1,36 @@
-'use client';
+'use client'
 
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import { TextField, Button, Box, Typography } from '@mui/material';
-import posts from '@/data/posts';
-import LeftArrowBtn from '@/components/ArrowLeftBtn/LeftArrowBtn';
-import { useToast } from '@/components/use-toast';
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as z from 'zod'
+import { TextField, Button, Box, Typography } from '@mui/material'
+import initialPosts from '@/data/posts'
+import LeftArrowBtn from '@/components/ArrowLeftBtn/LeftArrowBtn'
+import { useToast } from '@/components/use-toast'
+import { useRouter } from 'next/navigation'
 
 const formSchema = z.object({
   title: z.string().min(1, { message: 'Title is required' }),
   body: z.string().min(1, { message: 'Body is required' }),
   author: z.string().min(1, { message: 'Author is required' }),
   date: z.string().min(1, { message: 'Date is required' }),
-});
+})
 
 interface PostEditPageProps {
   params: {
-    id: string;
-  };
+    id: string
+  }
 }
-
+ import {Post } from "@/types/posts"
 const PostEditPage = ({ params }: PostEditPageProps) => {
-  const { toast } = useToast() as any;
+  const router = useRouter()
+  const { addToast } = useToast()
 
-  const post = posts.find((post) => post.id === params.id);
+  // Local state for posts (mocking DB)
+  const [posts, setPosts] = useState<Post[]>(initialPosts)
+
+  const post = posts.find((p) => p.id === params.id)
 
   const {
     register,
@@ -38,14 +44,33 @@ const PostEditPage = ({ params }: PostEditPageProps) => {
       author: post?.author || '',
       date: post?.date || '',
     },
-  });
+  })
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
-    toast({
-      title: 'Post has been updated successfully',
-      description: `Updated by ${post?.author} on ${post?.date}`,
-    });
-  };
+
+const onSubmit = (data: z.infer<typeof formSchema>) => {
+  const updatedPost: Post = { id: params.id, ...data }
+   console.log("update post .....");
+   
+  setPosts((prev: Post[]) =>
+    prev.map((p) => (p.id === updatedPost.id ? updatedPost : p))
+  )
+
+  addToast({
+    title: 'Updated',
+    description: `Post updated by ${updatedPost.author} on ${updatedPost.date}`,
+    type: 'success',
+  })
+
+  router.refresh()
+}
+
+  if (!post) {
+    return (
+      <Typography color="error" variant="h6">
+        Post not found
+      </Typography>
+    )
+  }
 
   return (
     <>
@@ -102,12 +127,12 @@ const PostEditPage = ({ params }: PostEditPageProps) => {
           helperText={errors.date?.message}
         />
 
-        <Button type="submit" variant="contained" fullWidth>
+        <Button   type="submit" variant="contained" fullWidth>
           Update Post
         </Button>
       </Box>
     </>
-  );
-};
+  )
+}
 
-export default PostEditPage;
+export default PostEditPage

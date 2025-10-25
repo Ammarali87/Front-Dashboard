@@ -32,10 +32,12 @@ you’d have to manually call event.preventDefault() and handle validation logic
 
      Toaster not Wrapper in Layout
 
+  if not in type make new compont then </P>  const P = PostsPagination as any;
 
 
 
-
+  useRouter  import from "next/navigation"
+   after update form use in submit router.refresh()   
 
 
 

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useForm, Controller } from 'react-hook-form';
 import { email, z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useToast } from '@/components/use-toast';
 
 import {
   Card,
@@ -41,9 +42,12 @@ const LoginForm: React.FC = () => {
       password: '',
     },  
   });
+   
+  const {addToast} = useToast();
 
   const onSubmit = (data: FormData) => {
     console.log('Login data:', data);
+     addToast({ title: "Logged successfully", type: "success",description:`Welcome ${data.email.slice(0,4)}` })
     router.push('/');
   };
 
