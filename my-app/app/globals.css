@@ -12,6 +12,32 @@
   }
 }
 
+
+ 
+
+/* Dark mode styles */
+[data-theme="dark"] {
+  --background: #121212;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+}
+
+/* Light mode styles */
+[data-theme="light"] {
+  --background: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+}
+
+
+
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+
 /* global.css */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

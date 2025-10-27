@@ -34,10 +34,22 @@ you’d have to manually call event.preventDefault() and handle validation logic
 
   if not in type make new compont then </P>  const P = PostsPagination as any;
 
-
+   when create type add ?    icon?:string
 
   useRouter  import from "next/navigation"
    after update form use in submit router.refresh()   
+
+# create usecontext helper always 
+<!-- export const useToast = () => {
+  const context = useContext(ToastContext)
+  if (!context) throw new Error("useToast must be used within ToastProvider") 
+  return context         
+}  -->
+
+   can make type function  ({toast:()=>{}})
+
+  
+  # after login make router.push('/');  from next not usenavigate
 
 
 

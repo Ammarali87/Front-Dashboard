@@ -130,6 +130,8 @@
 
 'use client';
 
+import { LightMode, DarkMode } from '@mui/icons-material';
+import { useTheme } from '@/context/ThemeContext';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Icon from '@/public/icon';
@@ -147,6 +149,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeId, setActiveId] = useState('home');
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const { darkMode, toggleTheme } = useTheme();
 
   // Scroll observer to highlight active section
   useEffect(() => {
@@ -235,6 +238,13 @@ export default function Navbar() {
                   height: 32,
                 }}
               />
+            </IconButton>
+             <IconButton 
+              onClick={toggleTheme} 
+              color="inherit"
+              sx={{ ml: 1 }}
+            >
+              {darkMode ? <LightMode /> : <DarkMode />}
             </IconButton>
 
             <Menu

@@ -2,18 +2,12 @@
 
 import DashboardCard from "@/components/Dashboard/DashboardCard";
 import PostsTable from "@/components/Posts/Posts";
-import LeftArrowBtn from "@/components/ArrowLeftBtn/LeftArrowBtn";
 import { User, Newspaper, Bell } from 'lucide-react';
-// https://www.dating.com/en/people/#referrer=https%3A%2F%2Fwww.dating.com%2F&registration=false&token=46ff74d719fd57b838699d2f0a751965&authorizationmethod=signin%3Atoken
 
 
 export default function Home() {
   return (
-    // <main className="flex flex-col items-center
-    //  justify-center min-screen bg-gray-100 dark:text-slate-200 p-8">
-    //   <div className="flex flex-col md:flex-row
-    //  items-center justify-center relative z-50 mb-8 h-screen mt-3 md:mt-[-22px]">
-     <main className="flex flex-col min-h-screen bg-gray-100 dark:text-slate-200">
+    <main className="flex flex-col min-h-screen bg-gray-100 dark:text-slate-200">
   <div className="flex flex-col md:flex-row items-top justify-center flex-grow p-8">
 
          <div className="flex  flex-wrap gap-5">

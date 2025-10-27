@@ -3,9 +3,9 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm, Controller } from 'react-hook-form';
-import { email, z } from 'zod';
+import {  z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useToast } from '@/components/use-toast';
+import { useToast } from '@/components/toast';
 
 import {
   Card,
@@ -30,6 +30,7 @@ type FormData = z.infer<typeof formSchema>;
 
 const LoginForm: React.FC = () => {
   const router = useRouter();
+  const {toast} = useToast();
   
   const {    
     control,
@@ -43,11 +44,14 @@ const LoginForm: React.FC = () => {
     },  
   });
    
-  const {addToast} = useToast();
 
   const onSubmit = (data: FormData) => {
     console.log('Login data:', data);
-     addToast({ title: "Logged successfully", type: "success",description:`Welcome ${data.email.slice(0,4)}` })
+      toast({
+      title: "Success",
+      description:`Welcome ${data.email.slice(0,4)}`,
+      variant: "default" // or "destructive" for errors
+    })  
     router.push('/');
   };
 
