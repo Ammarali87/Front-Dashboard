@@ -6,7 +6,7 @@ import { ThemeProvider as MUIThemeProvider, createTheme } from '@mui/material';
 type ThemeContextType = {
   darkMode: boolean;
   toggleTheme: () => void;
-};
+};  
 
 const ThemeContext = createContext<ThemeContextType>({
   darkMode: false,
@@ -15,24 +15,25 @@ const ThemeContext = createContext<ThemeContextType>({
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
+   //  only in intial load   
+  useEffect(() => {   
     const isDark = localStorage.getItem('darkMode') === 'true';
     setDarkMode(isDark);
-  }, []);
+  }, []);  
+
 
   const theme = createTheme({
     palette: {
       mode: darkMode ? 'dark' : 'light',
-    },
+    }, 
   });
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    localStorage.setItem('darkMode', (!darkMode).toString());
-  };
+ const toggleTheme = ()=>{
+   setDarkMode(!darkMode);
+    localStorage.setItem("darkMode",(!darkMode).toString() )
+ }   
 
-  return (
+  return (      
     <ThemeContext.Provider value={{ darkMode, toggleTheme }}>
       <MUIThemeProvider theme={theme}>
         {children}
@@ -41,4 +42,4 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export const useTheme = () => useContext(ThemeContext);
+export const useTheme = () => useContext(ThemeContext); 

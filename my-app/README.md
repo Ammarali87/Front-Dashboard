@@ -52,6 +52,163 @@ you’d have to manually call event.preventDefault() and handle validation logic
   # after login make router.push('/');  from next not usenavigate
 
 
+         اشرح 
+  <!-- const [toasts, setToasts] = useState<Array<ToastOption>>([]) -->
+   
+# create Tcontext   const TCotext =
+      creaContxt<{t:()=> void }>
+      ({t:()=>{} }) 
+
+ const toast = useCallback(
+    ({ title, description, variant = "default" } :ToastOption) => {
+    const id = Math.random().toString(36)
+    setToasts((toasts) => [...toasts, { id, title, description, variant }])
+    setTimeout(() => {      
+      setToasts((toasts) => toasts.filter((t) => t.id !== id))
+    }, 3000)
+  }, [])
+
+
+<!-- utils  اشرح Ai -->
+
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+
+
+  # dark mode 
+<!-- const isDark = localStorage.getItem('darkMode') === 'true'; -->
+
+const themCxt = createContext<ThemeContextType>({
+  darkMode: false,
+  toggleTheme: () => {},
+});
+
+#                                   type                                  
+ThemeProvider({ children }: { children: React.ReactNode })
+
+
+'dark' : 'light'
+  const theme = createTheme({
+    palette: {
+      mode: darkMode ? 'dark' : 'light',
+    }, 
+  });
+
+ <!-- if (element) { -->
+<!-- //     element.scrollIntoView({ behavior: 'smooth' }); -->
+<!-- //   } -->
+
+
+
+
+
+
+
+
+
+
+
+Today at 12 o’clock 😄 it’s October 1st — not New Year’s Eve 🎉 and not salary day 💰 my dear Cristina…
+It’s the day we complete exactly **two full months** of non-stop chatting and sharing everything every single day 💌
+..................
+These two months passed so fast! 😍
+So tell me… will you let Ammar be your love forever? ❤️
+Not just for a few months… but until we’re 100 years old together 😂👵👴 hahahahha
+.......................................................
+Do you enjoy having Ammar in your life?
+Do you feel that warm little spark when you read my messages? 🔥💞
+Because honestly… I feel warm every time I write to you 😌💫
+......continue read down 
+Now let’s share something useful too 😄👇
+Did you know that **talking to yourself out loud** is actually a good habit?
+(Just not in public… people might think you’re crazy 😂)
+But really — studies say it helps a lot:
+💡 When you have a problem, talk to yourself — it helps you see it more clearly.
+💪 When you feel down, it boosts your motivation and confidence.
+But… stop if you start talking negatively or about the past 😅
+
+I always love talking to myself — especially when I’m walking alone 🚶‍♂️🎧
+
+Now tell me, what are your dreams and future plans? 🌈
+Maybe you want to build a shelter for stray animals? 🐶🐱
+I will defintly support you 🤩🐈‍⬛
+Let’s make a deal 😎
+I’m good at photography 📸 — I can help you become a famous influencer, maybe like Kim Kardashian 😂✨
+And you help me travel to London someday  ✈️
+
+
+
+
+
+
+
+
+you ask about household duties::In our home, there will be no conflicts or drama — you’ll always be happy and satisfied 😍💞..
+ ..in Arabic culture, most men never even enter the kitchen 😂🍳.
+Many don’t even know how to make a simple cup of tea! ☕😅 I was shocked when I knew too! hahaha
+............
+But thank God, my mother was a disciplined woman 👩‍👦.
+She always told me, “Go to the kitchen and help!” and “Keep your room clean!” 🧹
+And I used to say, “I don’t have time, Mom!” 😆
+She’d reply, “It only takes 15 minutes!” ⏰..Actually, I helped sometimes — peeling potatoes 🥔 and preparing the rice 🍚.
+And the surprise? 😏 I can even make a chocolate cake 🍫🎂 (yes, really!)***In our future family, my Cristina 💖, we’ll do things differently —
+not 50%–50%, but 30%–30%–30% between me, you, and… ordering from a restaurant! 😂🍔🍕
+........
+As for cleaning our stunning Romantic room, we’ll just make a small daily routine 🕯️
+Maybe even a cute cleaning schedule, because honestly, I always forget my daily tasks😂 
+
+
+In our culture, rich families often have a servant (sometimes two) and even a driver 🚗💎.
+It’s normal here — they help with cleaning or taking care of the kids so parents can focus on work 👨‍👩‍👧‍👦💼.........
+But for us, my love, I think in the beginning we won’t need servants…
+We’ll just build our little world together — stunning, funny, and full of love 💞🏠😂.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
