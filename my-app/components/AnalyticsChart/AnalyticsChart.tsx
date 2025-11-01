@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import React, { useState } from "react";
+import  { useState } from "react";
 import {
   LineChart,
   Line,
@@ -43,7 +43,7 @@ const data: AnalyticsDataPoint[] = [
   { name: 'Mar', uv: 2000, pv: 9800, amt: 2290 },
   { name: 'Apr', uv: 2780, pv: 3908, amt: 2000 },
 ];
-
+  
 const availableFilters: AnalyticsFilter[] = [
   { value: "uv", label: "Unique Visitors" },
   { value: "pv", label: "Page Views" },
@@ -66,7 +66,7 @@ const AnalyticsChart: React.FC = () => {
       <CardActions>
         <FormControl sx={{ minWidth: 200 }} size="small">
           <InputLabel id="analytics-select-label">Filter</InputLabel>
-          <Select
+          <Select   
             labelId="analytics-select-label"
             value={selection}
             label="Filter"
@@ -74,7 +74,7 @@ const AnalyticsChart: React.FC = () => {
           >
             {availableFilters.map((filter) => (
               <MenuItem key={filter.value} value={filter.value}>
-                {filter.label}
+                {filter.label} 
               </MenuItem>
             ))}
           </Select>

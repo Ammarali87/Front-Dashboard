@@ -5,6 +5,8 @@ import PostsTable from "@/components/Posts/Posts";
 import { User, Newspaper, Bell } from 'lucide-react';
 import Contact from "@/components/Contact/Contact"
 import About from "@/components/About/About"
+import AnalyticsChart from "@/components/AnalyticsChart/AnalyticsChart";
+import Analytics from "@/components/Posts/Analytics";
 
 // https://www.sudanakhbar.com/1712414     import arucle
 
@@ -15,7 +17,7 @@ export default function Home() {
         id="home" 
         className="min-h-screen pt-20"
       >
-          Home  
+          Home   
 
        <div className="flex  flex-wrap gap-5">
            <DashboardCard 
@@ -36,13 +38,15 @@ export default function Home() {
           <Newspaper size={72} className="text-slate-500" />
         </div>
       </section>
-      <PostsTable />
+      {/* <PostsTable /> */}
 
       <section 
         id="about" 
         className="min-h-screen pt-20"
       >
-      Contact 
+      Analytics 
+      <AnalyticsChart/>
+      <Analytics/>
       </section>
 
       <section 
