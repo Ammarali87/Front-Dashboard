@@ -7,7 +7,7 @@ import * as z from 'zod'
 import { TextField, Button, Box, Typography } from '@mui/material'
 import initialPosts from '@/data/posts'
 import LeftArrowBtn from '@/components/ArrowLeftBtn/LeftArrowBtn'
-import { useToast } from '@/components/use-toast'
+import { toast } from '@/components/toast'
 import { useRouter } from 'next/navigation'
 
 const formSchema = z.object({
@@ -22,11 +22,10 @@ interface PostEditPageProps {
     id: string
   }
 }
- import {Post } from "@/types/posts"
+import { Post } from "@/types/posts";
 const PostEditPage = ({ params }: PostEditPageProps) => {
   const router = useRouter()
-  const { addToast } = useToast()
-
+  
   // Local state for posts (mocking DB)
   const [posts, setPosts] = useState<Post[]>(initialPosts)
 
@@ -47,22 +46,22 @@ const PostEditPage = ({ params }: PostEditPageProps) => {
   })
 
 
+
+    // try after => 
 const onSubmit = (data: z.infer<typeof formSchema>) => {
   const updatedPost: Post = { id: params.id, ...data }
-   console.log("update post .....");
-   
+  
+  // Update posts state
   setPosts((prev: Post[]) =>
     prev.map((p) => (p.id === updatedPost.id ? updatedPost : p))
-  )
+)
 
-  addToast({
-    title: 'Updated',
-    description: `Post updated by ${updatedPost.author} on ${updatedPost.date}`,
-    type: 'success',
-  })
-
-  router.refresh()
+// Show toast notification
+console.log("update success")
+toast.success('Post updated successfully!')
 }
+
+ 
 
   if (!post) {
     return (

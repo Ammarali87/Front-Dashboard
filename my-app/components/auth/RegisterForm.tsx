@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useForm, Controller } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useToast } from '../toast';
+import { toast } from '../toast';
 import {
   Card,
   CardContent,
@@ -51,10 +51,9 @@ const RegisterForm: React.FC = () => {
     },
   });
 
-  const {toast} = useToast();
+  
   const onSubmit = (data: FormData) => {
-     toast({ title: "Regiser successfully" ,
-       description:`Welcome ${data.name}` })
+    toast.success("Post updated successfully")
     console.log('Register data:', data);
     router.push('/');
   };   

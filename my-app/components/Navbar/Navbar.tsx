@@ -11,6 +11,7 @@ const navItems = [
   { path: '/#home', name: 'Home', id: 'home' },
   { path: '/#about', name: 'About', id: 'about' },
   { path: '/#contact', name: 'Contact', id: 'contact' },
+  { path: '/#auth', name: 'Login/Register', id: 'auth' },
 ];
 
 export default function Navbar() {

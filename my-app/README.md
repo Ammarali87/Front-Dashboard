@@ -104,7 +104,7 @@ ThemeProvider({ children }: { children: React.ReactNode })
 
 
 
-
+npm i sonner   for toast 
 
 
 
