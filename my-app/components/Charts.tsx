@@ -43,8 +43,8 @@ export const PopularPostsChart = () => {
         <BarChart data={analyticsData.popularPosts}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="title" />
-          <YAxis />
-          <Tooltip />
+          <YAxis />   
+          <Tooltip />   
           <Legend />
           <Bar dataKey="views" fill="#8884d8" />
           <Bar dataKey="likes" fill="#82ca9d" />
@@ -61,7 +61,7 @@ export const DeviceStatsChart = () => {
     <div className="w-full h-[400px] bg-white p-4 rounded-lg shadow-md">
       <h3 className="text-lg font-semibold mb-4">Device Distribution</h3>
       <ResponsiveContainer width="100%" height={300}>
-        <PieChart>
+        <PieChart>    
           <Pie
             data={analyticsData.deviceStats}
             cx="50%"
@@ -71,10 +71,11 @@ export const DeviceStatsChart = () => {
             outerRadius={100}
             fill="#8884d8"
             dataKey="users"
-          >
+          >  map((enyry,index))
             {analyticsData.deviceStats.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-            ))}
+              <Cell key={`cell-${index}`}
+               fill={COLORS[index % COLORS.length]} />
+            ))} 
           </Pie>
           <Tooltip />
         </PieChart>
